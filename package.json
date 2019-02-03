@@ -1,6 +1,6 @@
 {
   "name": "drone-acl",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "access control list module",
   "main": "./lib/index.js",
   "scripts": {
@@ -9,10 +9,8 @@
   "author": "André Alves",
   "license": "mit",
   "dependencies": {
-    "knex": "^0.16.3",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
-    "pg": "^7.8.0",
     "slug": "^0.9.3"
   },
   "devDependencies": {
