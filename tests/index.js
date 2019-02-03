@@ -2,6 +2,7 @@ const test = require('tape')
 const knex = require('knex')
 
 const ACL = require('../lib')
+const RolePermission = require('./../lib/role-permission')
 
 const knexConn = knex({
   client: 'pg',
@@ -36,6 +37,11 @@ test('Roles', async t => {
 
     const adminRole = await acl.roles.create('admin')
     t.equal(adminRole.name, 'admin', 'create admin role')
+
+    t.assert(
+      adminRole instanceof RolePermission,
+      'role creation returns an instance of RolePermission'
+    )
 
     const regularRole = await acl.roles.create('regular')
     t.equal(regularRole.name, 'regular', 'create regular role')
@@ -172,6 +178,15 @@ test('Role Permissions', async t => {
     )
 
     t.assert(!(await user.can('list users')), `user cannot list users`)
+
+    const supervisor = await acl.roles.create('supervisor')
+
+    await supervisor.allow('create-users')
+
+    t.assert(
+      await supervisor.can('create users'),
+      'supervisor can create users'
+    )
   } catch (error) {
     t.fail(error.toString())
   } finally {
