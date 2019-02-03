@@ -187,6 +187,11 @@ test('Role Permissions', async t => {
       await supervisor.can('create users'),
       'supervisor can create users'
     )
+
+    t.assert(
+      (await acl.roles.create('supervisor')) instanceof RolePermission,
+      'return RolePermission instance for already created role'
+    )
   } catch (error) {
     t.fail(error.toString())
   } finally {
