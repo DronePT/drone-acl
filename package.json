@@ -6,7 +6,7 @@
   "scripts": {
     "test": "tape tests/**/*.js | tap-diff"
   },
-  "author": "André Alves",
+  "author": "André Alves <dronept@gmail.com>",
   "license": "mit",
   "dependencies": {
     "lodash": "^4.17.11",

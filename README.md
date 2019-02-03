@@ -17,7 +17,7 @@ const ACL = require('drone-acl');
 const knex = require('knex');
 
 (async function() {
-  const knexConn = const knexConn = knex({
+  const knexConn = knex({
     client: 'pg',
     connection: {
       host: '127.0.0.1',
@@ -28,7 +28,7 @@ const knex = require('knex');
     migrations: {
       tableName: 'ACL_migrations'
     }
-  })
+  });
 
   const acl = new ACL(knexConn);
 
