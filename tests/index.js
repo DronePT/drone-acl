@@ -1,24 +1,22 @@
 const test = require('tape')
+const knex = require('knex')
 
 const ACL = require('../lib')
 
-const acl = new ACL({
-  db: {
+const knexConn = knex({
+  client: 'pg',
+  connection: {
     host: '127.0.0.1',
     database: 'baca',
-    username: '',
+    user: '',
     password: ''
+  },
+  migrations: {
+    tableName: `ACL_migrations`
   }
 })
 
-test('Initialise ACL configuration', t => {
-  t.equal(acl.config.db.host, '127.0.0.1', 'database host')
-  t.equal(acl.config.db.database, 'baca', 'database name')
-  t.equal(acl.config.db.username, '', 'database username')
-  t.equal(acl.config.db.password, '', 'database password')
-
-  t.end()
-})
+const acl = new ACL(knexConn)
 
 test('Run database migration', async t => {
   try {

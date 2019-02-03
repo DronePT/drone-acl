@@ -14,17 +14,23 @@ npm install --save drone-acl
 
 ```javascript
 const ACL = require('drone-acl');
+const knex = require('knex');
 
 (async function() {
-  const acl = new ACL({
-    db: {
-      client: 'pg',
+  const knexConn = const knexConn = knex({
+    client: 'pg',
+    connection: {
       host: '127.0.0.1',
       database: 'database_name',
-      username: '',
+      user: '',
       password: ''
+    },
+    migrations: {
+      tableName: 'ACL_migrations'
     }
-  });
+  })
+
+  const acl = new ACL(knexConn);
 
   // run required database migrations
   await acl.migrate();
