@@ -1,6 +1,6 @@
 {
   "name": "drone-acl",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "access control list module",
   "main": "./lib/index.js",
   "scripts": {
