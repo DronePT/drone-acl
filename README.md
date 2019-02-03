@@ -35,14 +35,14 @@ const knex = require('knex');
   // run required database migrations
   await acl.migrate();
 
-  // create a role
-  await acl.roles.create('administrator');
-
   // create a permission
   await acl.permissions.create('view-users', 'Permission to view users');
 
-  // work with administrator role
-  const admin = acl.role('administrator');
+  // create a role
+  const admin = await acl.roles.create('administrator');
+
+  // if role is already created you can use:
+  // const admin = acl.role('administrator');
 
   // assign permissions to a role
   await admin.allow('view-users');
