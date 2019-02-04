@@ -13,6 +13,19 @@
     "moment": "^2.24.0",
     "slug": "^0.9.3"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DronePT/drone-acl.git"
+  },
+  "keywords": [
+    "acl",
+    "roles",
+    "permissions",
+    "access",
+    "control",
+    "access-control",
+    "allow"
+  ],
   "devDependencies": {
     "eslint": "^5.12.1",
     "eslint-config-standard": "^12.0.0",
