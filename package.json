@@ -11,7 +11,7 @@
   "dependencies": {
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
-    "slug": "^0.9.3"
+    "slug": "^1.1.0"
   },
   "repository": {
     "type": "git",
@@ -27,13 +27,13 @@
     "allow"
   ],
   "devDependencies": {
-    "eslint": "^5.12.1",
+    "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
     "tap-diff": "^0.1.1",
-    "tape": "^4.9.2"
+    "tape": "^4.10.2"
   }
 }
